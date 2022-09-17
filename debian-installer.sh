@@ -32,7 +32,7 @@ do
 	printf "3) Fluxbox\n"
 	printf "4) None\n"
 	read -p "Insert option: " desktopenv
-	if (($desktopenv>=1 && $desktopenv <=2)); then
+	if (($desktopenv>=1 && $desktopenv <=4)); then
 		num=1
 	else
 		printf "Invalid. Try again\n"
@@ -49,7 +49,7 @@ do
 	printf "3) firefox\n"
 	printf "4) none\n"
 	read -p "Option: " browsersel
-	if (($browsersel>=1 && $browsersel <=2)); then
+	if (($browsersel>=1 && $browsersel <=4)); then
 		num=1
 	else
 		printf "Invalid. Try again\n"
