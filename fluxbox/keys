@@ -1,0 +1,95 @@
+# click on the desktop to get menus
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+
+# scroll on the desktop to change workspaces
+OnDesktop Mouse4 :PrevWorkspace
+OnDesktop Mouse5 :NextWorkspace
+
+# scroll on the toolbar to change current window
+OnToolbar Mouse4 :PrevWindow {static groups} (iconhidden=no)
+OnToolbar Mouse5 :NextWindow {static groups} (iconhidden=no)
+
+# alt + left/right click to move/resize a window
+OnWindow Mod4 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindowBorder Move1 :StartMoving
+
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+
+# alt + middle click to lower the window
+OnWindow Mod1 Mouse2 :Lower
+
+# control-click a window's titlebar and drag to attach windows
+OnTitlebar Control Mouse1 :StartTabbing
+
+# double click on the titlebar to shade
+OnTitlebar Double Mouse1 :Shade
+
+# left click on the titlebar to move the window
+OnTitlebar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
+OnTitlebar Move1  :StartMoving
+
+# middle click on the titlebar to lower
+OnTitlebar Mouse2 :Lower
+
+# right click on the titlebar for a menu of options
+OnTitlebar Mouse3 :WindowMenu
+
+# alt-tab
+Mod1 Tab :NextWindow {groups} (workspace=[current])
+Mod1 Shift Tab :PrevWindow {groups} (workspace=[current])
+
+# cycle through tabs in the current window
+Mod4 Tab :NextTab
+Mod4 Shift Tab :PrevTab
+
+# open a terminal
+Mod4 t :ExecCommand kitty
+
+# open a rofi
+Mod1 space :Exec rofi -show run
+
+# current window commands
+Mod4 w :Close
+Mod1 Down :Minimize
+Mod1 Up :Maximize
+
+# move window
+Mod4 Left :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Left}
+Mod4 Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Right}
+Mod4 Up :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Up}
+Mod4 Down :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Bottom}
+
+# exit fluxbox
+Mod4 Shift q :Exit
+
+# change to a specific workspace
+Mod5 1 :Workspace 1
+Mod5 2 :Workspace 2
+Mod5 3 :Workspace 3
+Mod5 4 :Workspace 4
+Mod5 5 :Workspace 5
+Mod5 6 :Workspace 6
+Mod5 7 :Workspace 7
+Mod5 8 :Workspace 8
+Mod5 9 :Workspace 9
+Mod5 10 :Workspace 10
+Mod5 11 :Workspace 11
+Mod5 12 :Workspace 12
+
+# send the current window to a specific workspace
+Mod4 Shift 1 :SendToWorkspace 1
+Mod4 Shift 2 :SendToWorkspace 2
+Mod4 Shift 3 :SendToWorkspace 3
+Mod4 Shift 4 :SendToWorkspace 4
+Mod4 Shift 5 :SendToWorkspace 5
+Mod4 Shift 6 :SendToWorkspace 6
+Mod4 Shift 7 :SendToWorkspace 7
+Mod4 Shift 8 :SendToWorkspace 8
+Mod4 Shift 9 :SendToWorkspace 9
+Mod4 Shift 10 :SendToWorkspace 10
+Mod4 Shift 11 :SendToWorkspace 11
+Mod4 Shift 12 :SendToWorkspace 12
