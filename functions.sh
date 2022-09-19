@@ -182,7 +182,7 @@ xfce_install () {
 	redshift_install
 	lightdm_install
 	#Config XFCE
-	mkdir -p /home/$1/.config
+	mkdir -p /home/$1/.config/xfce4
 	cp -r xfce4/* /home/$1/.config/xfce4/
 	#Config
 	kitty_config $1
